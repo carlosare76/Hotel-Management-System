@@ -171,11 +171,11 @@ function prepareAndExecute($conn, $sql, $params)
             }
             ?>
             <div id="sign_up">
-                <h2>Sign Up</h2>
+                <h2>Registrate</h2>
                 <form class="user_signup" id="usersignup" action="" method="POST">
                     <div class="form-floating">
                         <input type="text" class="form-control" name="Username" placeholder=" ">
-                        <label for="Username">Username</label>
+                        <label for="Username">Nombre de Usuario</label>
                     </div>
                     <div class="form-floating">
                         <input type="email" class="form-control" name="Email" placeholder=" ">
@@ -183,15 +183,15 @@ function prepareAndExecute($conn, $sql, $params)
                     </div>
                     <div class="form-floating">
                         <input type="password" class="form-control" name="Password" placeholder=" ">
-                        <label for="Password">Password</label>
+                        <label for="Password">Constraseña</label>
                     </div>
                     <div class="form-floating">
                         <input type="password" class="form-control" name="CPassword" placeholder=" ">
-                        <label for="CPassword">Confirm Password</label>
+                        <label for="CPassword">Confirma Contraseña</label>
                     </div>
-                    <button type="submit" name="user_signup_submit" class="auth_btn">Sign up</button>
+                    <button type="submit" name="user_signup_submit" class="auth_btn">Registrate</button>
                     <div class="footer_line">
-                        <h6>Already have an account? <span class="page_move_btn" onclick="loginpage()">Log in</span></h6>
+                        <h6>¿Ya tienes una cuenta? <span class="page_move_btn" onclick="loginpage()">Inicia Sesion</span></h6>
                     </div>
                 </form>
             </div>
