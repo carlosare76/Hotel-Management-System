@@ -55,16 +55,15 @@ function prepareAndExecute($conn, $sql, $params)
     <!-- Main Section -->
     <section id="auth_section">
         <div class="logo">
-            <img class="bluebirdlogo" src="./image/bluebirdlogo.png" alt="logo">
-            <p>BLUEBIRD</p>
+            <img class="bluebirdlogo" src="./image/carolinaslogo.png" alt="logo">
         </div>
         <div class="auth_container">
             <!-- Login -->
             <div id="Log_in">
-                <h2>Log In</h2>
+                <h2>Inicio Sesion</h2>
                 <div class="role_btn">
-                    <div class="btns active">User</div>
-                    <div class="btns">Staff</div>
+                    <div class="btns active">Usuario</div>
+                    <div class="btns">Equipo</div>
                 </div>
 
                 <!-- User Login -->
@@ -88,7 +87,7 @@ function prepareAndExecute($conn, $sql, $params)
                 <form class="user_login authsection active" id="userlogin" action="" method="POST">
                     <div class="form-floating">
                         <input type="text" class="form-control" name="Username" placeholder=" ">
-                        <label for="Username">Username</label>
+                        <label for="Username">Nombre Usuario</label>
                     </div>
                     <div class="form-floating">
                         <input type="email" class="form-control" name="Email" placeholder=" ">
@@ -96,11 +95,11 @@ function prepareAndExecute($conn, $sql, $params)
                     </div>
                     <div class="form-floating">
                         <input type="password" class="form-control" name="Password" placeholder=" ">
-                        <label for="Password">Password</label>
+                        <label for="Password">Contraseña</label>
                     </div>
-                    <button type="submit" name="user_login_submit" class="auth_btn">Log in</button>
+                    <button type="submit" name="user_login_submit" class="auth_btn">Inicia Sesion</button>
                     <div class="footer_line">
-                        <h6>Don't have an account? <span class="page_move_btn" onclick="signuppage()">sign up</span></h6>
+                        <h6>¿No tienes una cuenta? <span class="page_move_btn" onclick="signuppage()">Crear Cuenta</span></h6>
                     </div>
                 </form>
 
@@ -129,9 +128,9 @@ function prepareAndExecute($conn, $sql, $params)
                     </div>
                     <div class="form-floating">
                         <input type="password" class="form-control" name="Emp_Password" placeholder=" ">
-                        <label for="floatingPassword">Password</label>
+                        <label for="floatingPassword">Contraseña</label>
                     </div>
-                    <button type="submit" name="Emp_login_submit" class="auth_btn">Log in</button>
+                    <button type="submit" name="Emp_login_submit" class="auth_btn">Inicio Sesion</button>
                 </form>
             </div>
 

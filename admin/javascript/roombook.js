@@ -7,26 +7,17 @@ adduserclose = () => {
     detailpanel.style.display = "none";
 }
 
-//search bar logic using js
-const searchFun = () =>{
+// Lógica de búsqueda usando JS
+const searchFun = () => {
     let filter = document.getElementById('search_bar').value.toUpperCase();
-
     let myTable = document.getElementById("table-data");
-
     let tr = myTable.getElementsByTagName('tr');
 
-    for(var i = 0; i< tr.length;i++){
+    for (var i = 0; i < tr.length; i++) {
         let td = tr[i].getElementsByTagName('td')[1];
-
-        if(td){
+        if (td) {
             let textvalue = td.textContent || td.innerHTML;
-
-            if(textvalue.toUpperCase().indexOf(filter) > -1){
-                tr[i].style.display = "";
-            }else{
-                tr[i].style.display = "none";
-            }
+            tr[i].style.display = textvalue.toUpperCase().indexOf(filter) > -1 ? "" : "none";
         }
     }
-
 }

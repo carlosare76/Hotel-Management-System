@@ -1,80 +1,77 @@
 <?php
-    session_start();
-    include '../config.php';
-
-
+session_start();
+include '../config.php';
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlueBird - Admin</title>
-    <!-- boot -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <!-- fontowesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-	<!-- css for table and search bar -->
-	<link rel="stylesheet" href="css/roombook.css">
-
+    <title>Hostal Carolinas - Administrador</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="css/roombook.css">
 </head>
 <body>
-	<div class="searchsection">
-        <input type="text" name="search_bar" id="search_bar" placeholder="search..." onkeyup="searchFun()">
+    <div class="searchsection">
+        <input type="text" name="search_bar" id="search_bar" placeholder="Buscar..." onkeyup="searchFun()">
     </div>
 
-    <div class="roombooktable" class="table-responsive-xl">
+    <div class="roombooktable table-responsive-xl">
         <?php
-            $paymanttablesql = "SELECT * FROM payment";
-            $paymantresult = mysqli_query($conn, $paymanttablesql);
-
-            $nums = mysqli_num_rows($paymantresult);
+            $paymenttablesql = "SELECT * FROM payment";
+            $paymentresult   = mysqli_query($conn, $paymenttablesql);
         ?>
         <table class="table table-bordered" id="table-data">
             <thead>
                 <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Room Type</th>
-                    <th scope="col">Bed Type</th>
-                    <th scope="col">Check In</th>
-                    <th scope="col">Check In</th>
-					<th scope="col">No of Day</th>
-                    <th scope="col">No of Room</th>
-					<th scope="col">Meal Type</th>
-                    <th scope="col">Room Rent</th>
-                    <th scope="col">Bed Rent</th>
-                    <th scope="col">Meals</th>
-					<th scope="col">Total Bill</th>
-                    <th scope="col">Action</th>
-                    <!-- <th>Delete</th> -->
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Tipo Habitación</th>
+                    <th scope="col">Tipo Cama</th>
+                    <th scope="col">Entrada</th>
+                    <th scope="col">Salida</th>
+                    <th scope="col">No. Días</th>
+                    <th scope="col">No. Habitaciones</th>
+                    <th scope="col">Tipo de Comida</th>
+                    <th scope="col">Tarifa Habitación</th>
+                    <th scope="col">Tarifa Cama</th>
+                    <th scope="col">Comidas</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Acción</th>
                 </tr>
             </thead>
-
             <tbody>
             <?php
-            while ($res = mysqli_fetch_array($paymantresult)) {
+            while ($res = mysqli_fetch_assoc($paymentresult)) {
             ?>
                 <tr>
-                    <td><?php echo $res['id'] ?></td>
-                    <td><?php echo $res['Name'] ?></td>
-                    <td><?php echo $res['RoomType'] ?></td>
-                    <td><?php echo $res['Bed'] ?></td>
-					<td><?php echo $res['cin'] ?></td>
-                    <td><?php echo $res['cout'] ?></td>
-					<td><?php echo $res['noofdays'] ?></td>
-                    <td><?php echo $res['NoofRoom'] ?></td>
-                    <td><?php echo $res['meal'] ?></td>
-                    <td><?php echo $res['roomtotal'] ?></td>
-					<td><?php echo $res['bedtotal'] ?></td>
-					<td><?php echo $res['mealtotal'] ?></td>
-					<td><?php echo $res['finaltotal'] ?></td>
+                    <td><?= $res['id'] ?></td>
+                    <td><?= htmlspecialchars($res['Name']) ?></td>
+                    <td><?= htmlspecialchars($res['RoomType']) ?></td>
+                    <td><?= htmlspecialchars($res['Bed']) ?></td>
+                    <td><?= $res['cin'] ?></td>
+                    <td><?= $res['cout'] ?></td>
+                    <td><?= $res['noofdays'] ?></td>
+                    <td><?= $res['NoofRoom'] ?></td>
+                    <td><?= htmlspecialchars($res['meal']) ?></td>
+                    <td><?= number_format($res['roomtotal'], 2) ?></td>
+                    <td><?= number_format($res['bedtotal'], 2) ?></td>
+                    <td><?= number_format($res['mealtotal'], 2) ?></td>
+                    <td><?= number_format($res['finaltotal'], 2) ?></td>
                     <td class="action">
-                        <a href="invoiceprint.php?id= <?php echo $res['id']?>"><button class="btn btn-primary"><i class="fa-solid fa-print"></i>Print</button></a>
-						<a href="paymantdelete.php?id=<?php echo $res['id']?>"><button class="btn btn-danger">Delete</button></a>
+                        <a href="invoiceprint.php?id=<?= $res['id'] ?>">
+                            <button class="btn btn-primary"><i class="fa-solid fa-print"></i> Imprimir</button>
+                        </a>
+                        <a href="paymentdelete.php?id=<?= $res['id'] ?>">
+                            <button class="btn btn-danger">Eliminar</button>
+                        </a>
                     </td>
                 </tr>
             <?php
@@ -83,33 +80,22 @@
             </tbody>
         </table>
     </div>
-</body>
 
-<script>
-    //search bar logic using js
-    const searchFun = () =>{
+    <script>
+    // Lógica de búsqueda
+    function searchFun() {
         let filter = document.getElementById('search_bar').value.toUpperCase();
-
         let myTable = document.getElementById("table-data");
-
         let tr = myTable.getElementsByTagName('tr');
 
-        for(var i = 0; i< tr.length;i++){
+        for (let i = 0; i < tr.length; i++) {
             let td = tr[i].getElementsByTagName('td')[1];
-
-            if(td){
-                let textvalue = td.textContent || td.innerHTML;
-
-                if(textvalue.toUpperCase().indexOf(filter) > -1){
-                    tr[i].style.display = "";
-                }else{
-                    tr[i].style.display = "none";
-                }
+            if (td) {
+                let textValue = td.textContent || td.innerHTML;
+                tr[i].style.display = textValue.toUpperCase().includes(filter) ? "" : "none";
             }
         }
-
     }
-
-</script>
-
+    </script>
+</body>
 </html>

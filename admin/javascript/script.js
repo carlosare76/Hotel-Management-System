@@ -1,4 +1,4 @@
-//employee-user login
+// employee-user login
 const btns = document.querySelectorAll('.pagebtn');
 const frames = document.querySelectorAll('.frames');
 

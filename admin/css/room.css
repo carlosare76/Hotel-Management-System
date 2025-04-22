@@ -2,97 +2,97 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400&display=swap');
 
 :root {
-    --bg-text-shadow: 0 2px 4px rgb(13 0 77 / 8%), 0 3px 6px rgb(13 0 77 / 8%), 0 8px 16px rgb(13 0 77 / 8%);
-    --bg-box-shadow: 0px 0px 20px 6px rgba(8, 8, 15, 0.31);
+    /* Sombras originales */
+    --bg-text-shadow: 0 2px 4px rgb(13 0 77 / 8%),
+                     0 3px 6px rgb(13 0 77 / 8%),
+                     0 8px 16px rgb(13 0 77 / 8%);
+    --bg-box-shadow:  0px 0px 20px 6px rgba(8, 8, 15, 0.31);
+
+    /* Paleta Hostal Carolinas */
+    --color-acento:   #E06020;
+    --color-sol:      #E0C040;
+    --color-gris:     #A0A0A0;
+    --color-texto:    #000000;
+    --color-fondo:    #FFFFFF;
 }
-*::-webkit-scrollbar{
+
+*::-webkit-scrollbar {
     width: .4rem;
 }
-*::-webkit-scrollbar-track{
-    background: rgb(6, 6, 44);
+*::-webkit-scrollbar-track {
+    background: var(--color-texto);
 }
-*::-webkit-scrollbar-thumb{
-    background: #0040ff;
+*::-webkit-scrollbar-thumb {
+    background: var(--color-sol);
 }
 
 body {
-    /* background-color: #ffff; */
-    /* background-image: url(../../image/bg.jpg);
-    background-size: cover; */
+    background-color: var(--color-fondo);
 }
 
 * {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    /* text-shadow: var(--bg-text-shadow); */
 }
 
-.addroomsection{
+.addroomsection {
     height: 60px;
     width: 100%;
-    background-color:  #0a0d2d;
-    position:fixed;
-    /* display: flex; */
+    background-color: var(--color-acento);
+    position: fixed;
+    top: 0; 
+    left: 0;
     z-index: 100;
-    
 }
-
-.addroomsection form{
+.addroomsection form {
     height: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
-
-.addroomsection form label{
-    color: white;
+.addroomsection form label {
+    color: var(--color-fondo);
 }
-
-.addroomsection form select{
+.addroomsection form select,
+.addroomsection form input {
     width: 300px;
 }
 
-.addroomsection form input{
-    width: 300px;
-}
-
-
-
-.room{
-    display: flex;
+.room {
     position: relative;
     top: 60px;
     height: 85vh;
     overflow-y: scroll;
+    display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    background-color: var(--color-fondo);
 }
-.roombox{
+
+.roombox {
     height: 230px;
     width: 230px;
     margin: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: #0a0d2d;
+    color: var(--color-texto);
     text-shadow: var(--bg-text-shadow);
     border-radius: 10px;
+    box-shadow: var(--bg-box-shadow);
 }
 
-.roomboxsuperior{
-    background-color:#2407fc8e;
+/* Tipos de habitación con semitransparencias de la paleta */
+.roomboxsuperior {
+    background-color: rgba(224,96,32,0.6);   /* --color-acento al 60% */
 }
-
-.roomboxdelux{
-    background-color:#fa8393c8;
+.roomboxdelux {
+    background-color: rgba(224,192,64,0.6);  /* --color-sol al 60% */
 }
-
-.roomboguest{
-    background-color:#19cf1069;
+.roomboguest {
+    background-color: rgba(160,160,160,0.6);  /* --color-gris al 60% */
 }
-
-.roomboxsingle{
-    background-color:#07fcdb8e;
+.roomboxsingle {
+    background-color: rgba(224,96,32,0.3);   /* --color-acento al 30% */
 }
-

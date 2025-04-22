@@ -49,7 +49,7 @@ section {
 }
 
 .logo .bluebirdlogo {
-    height: 100%;
+    height: 200%;
 }
 
 .logo p {
@@ -96,13 +96,13 @@ section {
 }
 
 .role_btn .btns:hover{
-    background-image: linear-gradient(90deg, rgba(76, 185, 236, 0.527), rgba(0, 30, 255, 0.456));
+    background-image: linear-gradient(90deg, rgba(236, 223, 76, 0.527), rgba(255, 140, 0, 0.456));
     transition: ease-in-out;
     color: white;
 }
 
 .btns.active{
-    background-image: linear-gradient(90deg, rgba(76, 185, 236, 0.527), rgba(0, 30, 255, 0.456));
+    background-image: linear-gradient(90deg, rgba(236, 223, 76, 0.527), rgba(255, 140, 0, 0.456));
     color: white;
 }
 

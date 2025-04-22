@@ -1,116 +1,129 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Cookie&family=Poppins:wght@600&display=swap');
 
 :root {
-    --bg-text-shadow: 0 2px 4px rgb(13 0 77 / 8%), 0 3px 6px rgb(13 0 77 / 8%), 0 8px 16px rgb(13 0 77 / 8%);
-    --bg-box-shadow: 0px 0px 20px 6px rgb(0 0 0 / 34%);
+    /* Paleta Hostal Carolinas */
+    --color-acento:    #E06020;  /* naranja */
+    --color-sol:       #E0C040;  /* amarillo */
+    --color-gris:      #A0A0A0;  /* gris ventanas */
+    --color-texto:     #000000;  /* negro */
+    --color-fondo:     #FFFFFF;  /* blanco */
+
+    /* Sombras (sin cambios) */
+    --bg-text-shadow:  0 2px 4px rgb(13 0 77 / 8%),
+                       0 3px 6px rgb(13 0 77 / 8%),
+                       0 8px 16px rgb(13 0 77 / 8%);
+    --bg-box-shadow:   0px 0px 20px 6px rgb(0 0 0 / 34%);
 }
 
 * {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    /* text-shadow: var(--bg-text-shadow); */
 }
+
 body {
     height: 100vh;
     overflow: hidden;
+    background-color: var(--color-fondo);
 }
-.uppernav{
+
+/* Barra superior */
+.uppernav {
     height: 50px;
-    /* background-color: rgb(78, 94, 112); */
-    background-image: linear-gradient(90deg, #70b7e6bc, #0000ffaa);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 5px 40px;
+    background-image: linear-gradient(
+      90deg,
+      rgba(224,192,64,0.73) , /* semitransparente amarillo */
+      rgba(224,96,32,0.67)    /* semitransparente naranja */
+    );
 }
+
+/* Logo */
 .logo {
     height: 90%;
     display: flex;
 }
 .logo .bluebirdlogo {
-    height: 100%;
+    height: 200%;
 }
 .logo p {
     height: 100%;
     display: flex;
     align-items: center;
     font-size: 30px;
-    color: rgb(8, 17, 44);
+    color: var(--color-texto);
     text-shadow: var(--bg-text-shadow);
 }
 
-.logout button{
+/* Botón de logout */
+.logout button {
     height: 30px;
     width: 100px;
-    background-color: rgba(228, 24, 24, 0.789);
+    background-color: var(--color-acento);
     border: none;
     border-radius: 20px;
-    color: white;
+    color: var(--color-fondo);
     cursor: pointer;
 }
 
-
+/* Menú lateral */
 .sidenav {
     position: absolute;
-    background-color: #0e1b3d;
     width: 18%;
     height: 100%;
-    color: #ffffff;
+    background-color: var(--color-acento);
+    color: var(--color-fondo);
 }
-ul li{
+ul li {
     display: flex;
-    /* justify-content: center; */
     align-items: center;
-    padding: 0px 10px;
+    padding: 0 10px;
     height: 50px;
     cursor: pointer;
     margin-bottom: 5px;
 }
-ul li:hover{
-    background-color: #141dd498;
-}
-ul li.active{
-    background-color: #141dd498;
+ul li:hover,
+ul li.active {
+    /* semitransparente naranja */
+    background-color: #E0602098;
 }
 
-.mainscreen{
+/* Contenido principal */
+.mainscreen {
     margin-left: 18%;
 }
-
-.frames{
+.frames {
     height: 100vh;
     width: 100%;
     display: none;
 }
-
-.frames.active{
+.frames.active {
     display: block;
 }
 
-
-/* temp */
-img{
+/* Imagenes pequeñas */
+img {
     height: 23px;
 }
 
-
-
-/* responsive stuff */
-#mobileview{
-    height: 100vh;
-    width: 100%;
-    background-color: #ffffff;
+/* Vista móvil */
+#mobileview {
     position: absolute;
-    z-index: 9999;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-fondo);
     display: none;
+    z-index: 9999;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 }
-
-@media (max-width:40rem) {
-    #mobileview{
+@media (max-width: 40rem) {
+    #mobileview {
         display: flex;
     }
 }
