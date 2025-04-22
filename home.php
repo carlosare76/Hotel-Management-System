@@ -44,15 +44,15 @@ if($usermail == true){
 <body>
   <nav>
     <div class="logo">
-      <img class="bluebirdlogo" src="./image/bluebirdlogo.png" alt="logo">
-      <p>BLUEBIRD</p>
+      <img class="bluebirdlogo" src="./image/carolinaslogo.png" alt="logo">
+      <p>Hostal Carolinas</p>
     </div>
     <ul>
-      <li><a href="#firstsection">Home</a></li>
-      <li><a href="#secondsection">Rooms</a></li>
-      <li><a href="#thirdsection">Facilites</a></li>
-      <li><a href="#contactus">contact us</a></li>
-      <a href="./logout.php"><button class="btn btn-danger">Logout</button></a>
+      <li><a href="#firstsection">Inicio</a></li>
+      <li><a href="#secondsection">Habitaciones</a></li>
+      <li><a href="#thirdsection">Servicios</a></li>
+      <li><a href="#contactus">Contactanos</a></li>
+      <a href="./logout.php"><button class="btn btn-danger">Cerrar Sesion</button></a>
     </ul>
   </nav>
 
@@ -72,7 +72,7 @@ if($usermail == true){
         </div>
 
         <div class="welcomeline">
-          <h1 class="welcometag">Welcome to heaven on earth</h1>
+          <h1 class="welcometag">Bienvenidos a la Ruta de las Flores</h1>
         </div>
 
       <!-- bookbox -->
@@ -288,7 +288,7 @@ if($usermail == true){
       <i class="fa-solid fa-envelope"></i>
     </div>
     <div class="createdby">
-      <h5>Created by @tushar</h5>
+      <h5>Hostal Carolinas</h5>
     </div>
   </section>
 </body>
